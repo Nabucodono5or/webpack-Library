@@ -5,8 +5,13 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "webpack-numbers.js",
+    library: "webpackNumbers",
+    libraryTarget: "umd",
   },
-  devtool,
+  devtool: "inline-source-map",
+  devServer: {
+    contentBase: "./dist",
+  },
   externals: {
     lodash: {
       commonjs: "lodash",
